@@ -1,0 +1,112 @@
+import math
+
+#Given: xo,co and x1 and x2 and x3
+#Find: c1,c2,c3
+
+# Define input variables
+
+xo=2.0
+co=100.0
+x1=0.0
+x2=4.0
+x3=6.0
+
+# Solve equations (concentration falls off as 1/r^2 and r = (xo-x1).
+
+c1=co/(xo-x1)**2
+c2=co/(xo-x2)**2
+c3=co/(xo-x3)**2
+
+# Print problem and solution
+
+print 'Given: xo =', xo,', co =',co
+print 'For: x1 =', x1, ', x2 =', x2, ', x3 =',x3
+print
+print 'Answer: c1 =',c1, ', c2=',c2, ', c3=',c3
+print
+print '*****************************************'
+
+#Given: x1,c1 and x2,c2
+#Find: xo,co
+
+# Define input variables
+x1=0.0
+c1=25.0
+x2=6
+c2=6.25
+
+# Solve for co and then set the two terms equal.  Explan bi-nomial, and
+# collect terms.  Then define intermediate variables because scientists
+# and programmers are lazy and don't like to type!
+
+a=c2-c1
+b=-2*c2*x2+2*c1*x1
+c=c2*x2**2-c1*x1**2
+
+# Solve quadratic equation.  Note that there are two solutions, one for + and
+# one for -.
+
+xop=(-b+math.sqrt(b**2-4*a*c))/(2*a)
+xom=(-b-math.sqrt(b**2-4*a*c))/(2*a)
+
+# Solve for c0 (for both xo solutions)
+
+cop=c1*(xop-x1)**2
+com=c1*(xom-x1)**2
+
+# Print problem and solution
+
+print 'Given: x1 =', x1,', c1 =',c1
+print '       x2 =', x2,', c2 =', c2
+print 'Find : xo and co'
+print
+print 'Answer: xo =',xop, ', co=',cop
+print 'or'
+print 'Answer: xo =',xom, ', co=',com
+print
+print '*****************************************'
+
+# How do we know which one is right?  We don't!  
+# We don't know if it is a close small source or a large source far away!
+# But if we add a third sensor we can break the tie!
+
+# Define input variables
+
+x1=0
+c1=25
+x2=6
+c2=6.25
+x3=4
+c3=25
+
+# Follow same procedure as before using equation for c1 and c2 and then
+# equation for c1 and c3.  Define intermediate variables because?  Yes,
+# because scientists and programmers are lazy (SPAL)!
+
+a=c2-c1
+b=-2*c2*x2+2*c1*x1
+c=c2*x2**2-c1*x1**2
+d=c3-c1
+e=-2*c3*x3+2*c1*x1
+f=c3*x3**2-c1*x1**2
+
+# multiply first equation by e and 2nd equation by -a.  Then add and solve
+# for xo.
+
+xo = (f*a-c*d)/(b*d-e*a)
+
+# Use equation for c1, c2, or c3 to solve for co.
+
+co = (xo-x1)**2*c1
+
+# Print problem and solution
+
+print 'Given: x1 =', x1,', c1 =',c1
+print '       x2 =', x2,', c2 =', c2
+print '       x3 =', x3,', c3 =', c3
+print 'Find : xo and co'
+print
+print 'Answer: xo =',xo, ', co=',co
+print
+print '*****************************************'
+
