@@ -1,13 +1,31 @@
 import math
 
+def quadp(ain,bin,cin):
+   outp=(-bin+math.sqrt(bin**2-4*ain*cin))/(2*ain)
+   return outp
+   
+def quadm(ain,bin,cin): 
+    outm=(-bin-math.sqrt(b**2-4*ain*cin))/(2*ain)
+    return outm
+    
+def conc(cin,xin1,xin2):
+    outc=cin*(xin1-xin2)**2
+    return outc
+
+    
+
 x1=0
 x2=6
 c1=25
 c2=6.25
 a=c1-c2
 b=(-2*x1*c1)+2*c2*x2
-c=c1*x1-(c2*x2)
-x0p=(-b+math.sqrt(b**2-4*a*c))/(2*a)
-x0m=(-b-math.sqrt(b**2-4*a*c))/(2*a)
+c=c1*x1**2-(c2*x2**2)
+#x0p=(-b+math.sqrt(b**2-4*a*c))/(2*a)
+x0p=quadp(a,b,c)
+x0m=quadm(a,b,c)
+c0a=conc(c1,x0p,x1)
+c0b=conc(c1,x0m,x1)
 print (x1,x2,c1,c2,a,b,c)
-print (x0p,x0m)
+print (x0p,x0m,c0a,c0b) 
+
