@@ -1,0 +1,33 @@
+import math
+
+def quadp(ain,bin,cin):
+    outp=(-bin+math.sqrt(bin**2-4*ain*cin))/(2*ain)
+    return outp
+    
+def quadm(ain,bin,cin):
+    outp=(-bin-math.sqrt(bin**2-4*ain*cin))/(2*ain)
+    return outp
+    
+def concen(cin,xin1,xin2):
+    outp=(cin*(xin1-xin2))
+    return outp
+    
+x1=0
+x2=6
+c1=25
+c2=6.25
+c=c1*x1**2-c2*x2**2
+b=(-2*c1*x1) + (2*c2*x2)
+a=c1-c2
+x0p=quadp(a,b,c)
+x0m=quadm(a,b,c)
+
+print (x0p)
+print (x0m)
+
+
+c0m=concen(c1,x0p,x1)
+c0p=concen(c1,x0m,x1)
+
+print (c0p)
+print (c0m)
