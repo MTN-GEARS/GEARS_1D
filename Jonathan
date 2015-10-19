@@ -1,0 +1,32 @@
+#this program was made by Jonathan from the GEARS team
+
+#importing stuff
+import math
+#defining things 
+def quadp(ain,bin,cin):
+    outp= (-bin+math.sqrt(bin**2-4*ain*cin))/(2*ain)
+    return outp
+def quadm(ain,bin,cin):
+    outm= (-bin-math.sqrt(bin**2-4*ain*cin))/(2*ain)
+    return outm
+def conc (x0in):
+    c0out= c1*(x0in-x1)**2
+    return c0out
+    
+#variables   
+c1=25
+c2=6.25
+x1=0
+x2=6
+a= c1-c2
+b= (-2*c1*x1)+(2*c2*x2)
+c= (c1*x1**2)-(c2*x2**2)
+#math stuff
+x0p= quadp(a,b,c)
+x0m= quadm(a,b,c)
+c0p= conc (x0p)
+c0m= conc (x0m)
+#printing
+print (x0p),'and',(c0p)
+print 'or'
+print (x0m),'and',(c0m)
