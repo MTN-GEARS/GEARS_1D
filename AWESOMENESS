@@ -1,0 +1,16 @@
+import turtle
+import random
+from math import pi
+x=1
+y=random.randint(0,360)
+t = turtle.Turtle()
+print (y)
+while (x<y):
+    t.speed(0)
+    t.forward(x)
+    t.right(y)
+    t.speed(0)
+    x+=1
+    
+    #257 is WEIRD! (do y=257)
+
