@@ -1,0 +1,71 @@
+#this program was made by Jonathan from the GEARS team
+
+#importing stuff
+import math
+import random
+import numpy as np
+
+#defining things 
+
+def def_conc (x0in,c0in,x1in):
+    print (x0in,c0in,x1in)
+    c1out= c0in/((x0in-x1in)^2)
+    print(c1out)
+    return c1out
+    
+def abcdef(x1in,c1in,x2in,c2in,x3in,c3in):
+  a=c2in-c1in
+  b=-2*c2in*x2in+2*c1in*x1in
+  c=c2in*x2in**2-c1in*x1in**2
+  d=c3in-c1in
+  e=-2*c3in*x3in+2*c1in*x1in
+  f=c3in*x3in**2-c1in*x1in**2
+  return(a,b,c,d,e,f)
+#variables   
+
+c0=random.random()*100
+x0 = random.random()*6
+
+x1=random.random()*6
+c1=def_conc(x0,c0,x1)
+
+x2=random.random()*6
+c2=def_conc(x0,c0,x2)
+
+x3=random.random()*6
+c3=def_conc(x0,c0,x3)
+
+x4=random.random()*6
+c4=def_conc(x0,c0,x4)
+
+x5=random.random()*6
+c5=def_conc(x0,c0,x5)
+
+print 'solution',x0,c0
+print 'sensors', x1,c1,x2,c2,x3,c3,x4,c4,x5,c5
+
+a=c2-c1
+b=-2*c2*x2+2*c1*x1
+c=c2*x2**2-c1*x1**2
+d=c3-c1
+e=-2*c3*x3+2*c1*x1
+f=c3*x3**2-c1*x1**2
+
+print (a,b,c,d,e,f)
+a,b,c,d,e,f = abcdef(x1,c1,x2,c2,x3,c3)
+x01= ((f*a)-(c*d))/((b*d)-(e*a))
+#c01= conc (x01)
+#print (x01),'and',(c01)
+a,b,c,d,e,f = abcdef(x2,c2,x3,c3,x4,c4)
+x02= ((f*a)-(c*d))/((b*d)-(e*a))
+#c02= conc (x02)
+#print (x02),'and',(c02)
+
+a,b,c,d,e,f = abcdef(x3,c3,x4,c4,x5,c5)
+x03= ((f*a)-(c*d))/((b*d)-(e*a))
+#c03= conc (x03)
+#print (x03),'and',(c03)
+
+#print (x01+x02+x03)/3.0
+
+#print (med, conc(med))
