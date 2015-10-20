@@ -1,3 +1,4 @@
+
 #this program was made by Jonathan from the GEARS team
 
 #importing stuff
@@ -16,17 +17,25 @@ def conc (x0in):
 #variables   
 c1=25
 c2=6.25
+c3=4
 x1=0
 x2=6
+x3=25
 a= c1-c2
 b= (-2*c1*x1)+(2*c2*x2)
 c= (c1*x1**2)-(c2*x2**2)
+d= c1-c3
+e= (-2*c1*x1)+(2*c3*x3)
+f= (c1*x1**2)-(c3*x3**2)
 #math stuff
 x0p= quadp(a,b,c)
 x0m= quadm(a,b,c)
 c0p= conc (x0p)
 c0m= conc (x0m)
+x0= ((f*a)-(c*d))/((b*d)-(e*a))
+c0= conc (x0)
 #printing
 print (x0p),'and',(c0p)
 print 'or'
 print (x0m),'and',(c0m)
+print (x0),'and',(c0), 'are the right ones'
