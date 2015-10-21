@@ -1,0 +1,20 @@
+If you are meeting together T and/or Th, here is your assignment:
+
+Look over each others codes to solve for the source location and strength with two sensors.  
+How could the code be improved in terms of comments or formatting the print statement?  
+Feel free to look at my example for ideas.  
+If you have questions about the equations, using modules, calling modules, etc, ask one another.  
+I think between the three of you, you guys have all the answers!  (
+We have come a long way in just a couple of weeks, I am really proud of you!).
+
+If you finish that or are working alone:
+
+Program the code for three sensors (on the board in Ms. Unal's classroom or ask Ethan).
+
+Using turtle design a simple city (two intersecting streets with grass in the fields).
+
+If you do all that and are still looking for a challenge add the following to your city:
+
+Houses
+Vehicles (Cars, Trucks, Buses)
+Using the random function, plot a source with a random strength at a random location.
